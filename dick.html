@@ -1,0 +1,154 @@
+<head>
+	
+	<title>My Website</title>
+	
+	<style>
+		
+		body {
+			margin: 1;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background-color: #141414;
+			text-align: center;
+		}
+		
+		
+		
+		.container {
+background-color: #101010;
+border-radius: 5px;
+padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+box-shadow: 0 0 10px rgba(255,255,255, 1);
+text-align: left;
+border-radius: 5px;
+}
+
+		
+		.tab {
+			display: none;
+			padding: 20px;
+			border-radius: 5px;
+			background-color: #0c0c0c;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			text-align: center;
+			margin-top: 10px;
+			color:#FFFFFF;
+		}
+		
+		.tab.active {
+			display: block;
+		}
+		
+		.tab-links {
+			margin-bottom: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.tab-links a {
+			display: inline-block;
+			padding: 10px;
+			background-color: #0a0a0a;
+			color: #FFFFFF;
+			text-decoration: none;
+			border-radius: 5px 5px 0 0;
+			margin-right: 5px;
+		}
+		
+		.tab-links a.active {
+			background-color: #141414;
+			box-shadow: 0 0 5px rgba(250,250,250, 0.5);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="tab-links">
+			<a href="#" class="active" data-tab="about">About</a>
+			<a href="#" data-tab="how-to-use">How to Use</a>
+			<a href="#" data-tab="games-supported">Games Supported</a>
+			<a href="#" data-tab="social-media">Social Media</a>
+		</div>
+		
+		<div id="about" class="tab active">
+			<h2>About</h2>
+			<p>Welcome to my website! I'm a game developer and I love creating new and exciting games that people of all ages can enjoy. Whether you're looking for action-packed adventures or relaxing puzzle games, I have something for everyone.</p>
+			<p>On this website, you can learn more about my work, how to use my games, the games that I support, and how to connect with me on social media.</p>
+		</div>
+		
+		<div id="how-to-use" class="tab">
+			<h2>How to Use</h2>
+			<p>Using my games is easy! Simply download the game from the App Store or Google Play, install it on your device, and start playing. All of my games come with clear instructions and tutorials to help you get started.</p>
+			<p>If you have any questions or need additional support, please feel free to contact me and I'll be happy to assist you.</p>
+		</div>
+		
+		<div id="games-supported" class="tab">
+			
+<ul>
+<li># Aresenal<li>
+<li># BedWars<li>
+<li># Big PaintBall<li>
+<li># Blox Fruits<li>
+<li>- Bloxburg<li>
+<li># Build a boat for treasure<li>
+<li># Cursed Islands<li>
+<li># Da Hood<li>
+<li># Doors<li>
+<li># Flee the facility<li>
+<li># Islands<li>
+<li>- Jailbreak<li>
+<li># KAT<li>
+<li># Mad City<li>
+<li># Murder Mystery 2<li>
+<li># Natural Disaster Survival<li>
+<li>+ Ninja Legends<li>
+<li># Pet Simulator X<li>
+<li># Phantom Forces<li>
+<li>+ Prison Life<li>
+<li># Redwood Prison<li>
+<li># Resturant Tycoon 2<li>
+<li>+  Revengers 2<li>
+<li># Sharkbite 2<li>
+<li># Zombie Attack<li>
+<ul>
+
+</div>
+    	<div id="social-media" class="tab">
+		<h2>Social Media</h2>
+		<p>Connect with me on social media to stay up-to-date on my latest games and projects:</p>
+		<ul>
+			<li><a href="#">Twitter</a></li>
+			<li><a href="#">Facebook</a></li>
+			<li><a href="#">Instagram</a></li>
+			<li><a href="#">LinkedIn</a></li>
+		</ul>
+	</div>
+</div>
+
+<script>
+	const tabLinks = document.querySelectorAll(".tab-links a");
+	const tabs = document.querySelectorAll(".tab");
+	
+	tabLinks.forEach(function(link) {
+		link.addEventListener("click", function() {
+			const tab = this.dataset.tab;
+			tabs.forEach(function(tab) {
+				tab.classList.remove("active");
+			});
+			tabLinks.forEach(function(link) {
+				link.classList.remove("active");
+			});
+			document.querySelector("#" + tab).classList.add("active");
+			this.classList.add("active");
+		});
+	});
+</script>
+</body>
+</html>
