@@ -1,1 +1,133 @@
-print("script executed")
+<html>
+<head>
+	<title>My Website</title>
+	<style>
+		body {
+			margin: 1;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background-color: #F5F5F5;
+			text-align: center;
+		}
+		
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #FFF;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+			text-align: left;
+		}
+		
+		.tab {
+			display: none;
+			padding: 20px;
+			border-radius: 5px;
+			background-color: #FFF;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			text-align: center;
+			margin-top: 10px;
+		}
+		
+		.tab.active {
+			display: block;
+		}
+		
+		.tab-links {
+			margin-bottom: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.tab-links a {
+			display: inline-block;
+			padding: 10px;
+			background-color: #DDD;
+			color: #333;
+			text-decoration: none;
+			border-radius: 5px 5px 0 0;
+			margin-right: 5px;
+		}
+		
+		.tab-links a.active {
+			background-color: #FFF;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="tab-links">
+			<a href="#" class="active" data-tab="about">About</a>
+			<a href="#" data-tab="how-to-use">How to Use</a>
+			<a href="#" data-tab="games-supported">Games Supported</a>
+			<a href="#" data-tab="social-media">Social Media</a>
+		</div>
+		
+		<div id="about" class="tab active">
+			<h2>About</h2>
+			<p>Welcome to my website! I'm a game developer and I love creating new and exciting games that people of all ages can enjoy. Whether you're looking for action-packed adventures or relaxing puzzle games, I have something for everyone.</p>
+			<p>On this website, you can learn more about my work, how to use my games, the games that I support, and how to connect with me on social media.</p>
+		</div>
+		
+		<div id="how-to-use" class="tab">
+			<h2>How to Use</h2>
+			<p>Using my games is easy! Simply download the game from the App Store or Google Play, install it on your device, and start playing. All of my games come with clear instructions and tutorials to help you get started.</p>
+			<p>If you have any questions or need additional support, please feel free to contact me and I'll be happy to assist you.</p>
+		</div>
+		
+		<div id="games-supported" class="tab">
+			<h2>Games Supported</h2>
+			<p>Here
+are some of the games that I currently support:</p>
+<ul>
+<li>Adventure Island</li>
+<li>Battlefield</li>
+<li>Call of Duty</li>
+<li>Final Fantasy</li>
+<li>Legend of Zelda</li>
+</ul>
+<p>Check back regularly as I am always adding new games to my collection.</p>
+<p>Click on the links below to download my games:</p>
+<ul>
+<li><a href="#">Adventure Island</a></li>
+<li><a href="#">Battlefield</a></li>
+<li><a href="#">Call of Duty</a></li>
+<li><a href="#">Final Fantasy</a></li>
+<li><a href="#">Legend of Zelda</a></li>
+</ul>
+</div>
+    	<div id="social-media" class="tab">
+		<h2>Social Media</h2>
+		<p>Connect with me on social media to stay up-to-date on my latest games and projects:</p>
+		<ul>
+			<li><a href="#">Twitter</a></li>
+			<li><a href="#">Facebook</a></li>
+			<li><a href="#">Instagram</a></li>
+			<li><a href="#">LinkedIn</a></li>
+		</ul>
+	</div>
+</div>
+
+<script>
+	const tabLinks = document.querySelectorAll(".tab-links a");
+	const tabs = document.querySelectorAll(".tab");
+	
+	tabLinks.forEach(function(link) {
+		link.addEventListener("click", function() {
+			const tab = this.dataset.tab;
+			tabs.forEach(function(tab) {
+				tab.classList.remove("active");
+			});
+			tabLinks.forEach(function(link) {
+				link.classList.remove("active");
+			});
+			document.querySelector("#" + tab).classList.add("active");
+			this.classList.add("active");
+		});
+	});
+</script>
+</body>
+</html>
